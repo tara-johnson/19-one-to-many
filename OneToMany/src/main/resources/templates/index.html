@@ -18,11 +18,13 @@
                 <label>
                     Company:
                     <select name="companyid">
-                        <option value="1">AMC</option>
-                        <option value="2">Regal</option>
+                        <option th:each="company : ${companies}"
+                                th:text="${company.name}"
+                                th:value="${company.id}">
                     </select>
                 </label>
-                <label>Theater Name: <input type="text" name="name" /></label>
+                <label>Theater Name: <input type="text" name="locationName" /></label>
+                <label>Location: <input type="text" name="address" /></label>
                 <input type="submit" />
             </form>
 
