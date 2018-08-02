@@ -41,7 +41,17 @@ a one-to-many relationship.
  heroku pg:pull DATABASE_URL restful-theaters
 ```
 
-## Common Configure Errors
+## Database Structure
+The structure (and example contents) of your database should look like the
+following. Notice IDs have negative numbers. I've found this is a good way to
+keep initial database content out of the way of Spring JPA auto-generated ids.
+
+![database structure](./images/01-moviecompanies-structure.png)
+![database structure](./images/02-theaterlocations-structure.png)
+![database structure](./images/03-moviecompanies-contents.png)
+![database structure](./images/04-theaterlocations-contents.png)
+
+## Common Configuration Errors
 
 ### ClassNotFoundException: javax.xml.bind.JAXBException
 Verify your project is configured to run Java 1.8 explicitly. `File > Project
