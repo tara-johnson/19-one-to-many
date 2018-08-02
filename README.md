@@ -46,6 +46,12 @@ The structure (and example contents) of your database should look like the
 following. Notice IDs have negative numbers. I've found this is a good way to
 keep initial database content out of the way of Spring JPA auto-generated ids.
 
+**Notice!:** we've all run into errors between initializing our databases with
+known data then running into conflicts when Spring and the JPA try to generate
+their own ids and seeing errors when ids already exist. One way to avoid this
+is to initially seed the database with negative ids because Spring and the JPA
+will never try to make negative ids. Cool trick, huh?
+
 ![database structure](./images/01-moviecompanies-structure.png)
 ![database structure](./images/02-theaterlocations-structure.png)
 ![database structure](./images/03-moviecompanies-contents.png)
