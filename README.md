@@ -113,6 +113,7 @@ Make sure the properties on your model are `public`.
 No tests.
 
 ## Submission Instructions
+* Make sure it's deployed to Heroku
 * Work in a fork of this repository
 * Work in a branch on your fork
 * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
