@@ -1,13 +1,20 @@
 package com.example.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "moviecompanies")
 public class MovieCompany {
     @Id
-    Long id;
-    String name;
+    @GeneratedValue
+    @SequenceGenerator(name = "movie-company-generator")
+    public Long id;
+    public String name;
+
+    // required default constructor
+    public MovieCompany() {}
+
+    public MovieCompany(String name) {
+        this.name = name;
+    }
 }

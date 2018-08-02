@@ -28,17 +28,18 @@
 
             <h4>Movie Companies</h4>
             <ul>
-                <li>AMC</li>
-                <li>Regal</li>
+                <li th:each="company : ${companies}">
+                    <span th:text="${company.name}" />
+                </li>
             </ul>
 
 
             <h4>Theater Locations</h4>
             <ul>
-                <li>AMC Downtown</li>
-                <li>AMC Outtown</li>
-                <li>Regal 17</li>
-                <li>Regal Max 4D</li>
+                <li th:each="theater : ${theaters}">
+                    <span th:text="${theater.name}" />
+                    @ <span th:text="${theater.location}" />
+                </li>
             </ul>
         </div>
     </body>

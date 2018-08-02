@@ -37,8 +37,8 @@ a one-to-many relationship.
  git push heroku master
 
  DATABASE_URL=postgresql://localhost:5432
- heroku pg:push CRUDTrek DATABASE_URL
- heroku pg:pull DATABASE_URL CRUDTrek
+ heroku pg:push restful-theaters DATABASE_URL
+ heroku pg:pull DATABASE_URL restful-theaters
 ```
 
 ## Common Configure Errors
@@ -94,6 +94,10 @@ read these instructions, congratulations!
 ```
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 ```
+
+### Exception SpringEL expression: "company.name" (template: "index")
+The template engine is having trouble accessing a property on your model class.
+Make sure the properties on your model are `public`.
 
 ## Tests
 No tests.
