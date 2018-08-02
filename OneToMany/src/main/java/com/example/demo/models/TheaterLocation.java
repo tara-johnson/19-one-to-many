@@ -1,9 +1,6 @@
 package com.example.demo.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "theaterlocations")
@@ -12,12 +9,7 @@ public class TheaterLocation {
     public Long id;
     public Long movieCompanyId;
     public String name;
-
-    @Column(name="address")
     public String location;
-
-    // required default constructor
-    public TheaterLocation() {}
 
     public TheaterLocation(long movieCompanyId, String name, String location) {
         this.movieCompanyId = movieCompanyId;
