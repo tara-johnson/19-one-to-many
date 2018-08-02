@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Movie Theaters</title>
+        <link rel="stylesheet" href="/styles/main.css">
+    </head>
+    <body>
+        <div id="main">
+            <h1>Movie Theater Locations</h1>
+
+            <h4>Add new movie company</h4>
+            <form action="/moviecompanies" method="POST">
+                <label>Name: <input type="text" name="name" /></label>
+                <input type="submit" />
+            </form>
+
+            <h4>Add new theater location</h4>
+            <form action="/moviecompanies/add-location" method="POST">
+                <label>
+                    Company:
+                    <select name="companyid">
+                        <option value="1">AMC</option>
+                        <option value="2">Regal</option>
+                    </select>
+                </label>
+                <label>Theater Name: <input type="text" name="name" /></label>
+                <input type="submit" />
+            </form>
+
+            <h4>Movie Companies</h4>
+            <ul>
+                <li>AMC</li>
+                <li>Regal</li>
+            </ul>
+
+
+            <h4>Theater Locations</h4>
+            <ul>
+                <li>AMC Downtown</li>
+                <li>AMC Outtown</li>
+                <li>Regal 17</li>
+                <li>Regal Max 4D</li>
+            </ul>
+        </div>
+    </body>
+</html>

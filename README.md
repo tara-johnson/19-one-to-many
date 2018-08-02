@@ -41,6 +41,60 @@ a one-to-many relationship.
  heroku pg:pull DATABASE_URL CRUDTrek
 ```
 
+## Common Configure Errors
+
+### ClassNotFoundException: javax.xml.bind.JAXBException
+Verify your project is configured to run Java 1.8 explicitly. `File > Project
+Structure` then set `Project SDK` and `Project language level` dropdowns both
+to 1.8.
+
+
+### APPLICATION FAILED TO START
+```
+Description:
+Failed to configure a DataSource: 'url' attribute is not specified
+Reason: Failed to determine a suitable driver class
+```
+
+Remember to configure the database in the `application.properties` file.
+
+**src/main/resources/application.properties**
+```
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.url=jdbc:postgresql://localhost:5432/restful-theaters
+# spring.datasource.username= rajeevkumarsingh
+# spring.datasource.password=
+
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update
+```
+
+### Database does not exist
+Watch out because with this one you must scroll far up to see the real error.
+You'll see other errors like `No identifier specified for entity: MovieCompany`
+appear at the end of the log before you scroll further up and see the root
+error:
+
+```
+org.postgresql.util.PSQLException: FATAL: database "restful-theaters" does not exist
+```
+
+Solve it by making sure Postgres is running and you've created a database
+called `restful-theaters` as specified by the `application.properties` file.
+
+### PgConnection.createClob() is not yet implemented.
+
+Make sure to add this line to the `application.properties` config file. Sorry,
+I'm being mean and intentionally not including it there by default. If you have
+read these instructions, congratulations!
+
+```
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+```
+
 ## Tests
 No tests.
 
