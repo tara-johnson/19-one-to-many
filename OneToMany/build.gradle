@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+plugins {
+    id 'java'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -30,4 +34,16 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+group 'OneToMany'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
