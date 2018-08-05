@@ -20,7 +20,7 @@
                     <select name="companyid">
                         <option th:each="company : ${companies}"
                                 th:text="${company.name}"
-                                th:value="${company.id}">
+                                th:value="${company.id}" />
                     </select>
                 </label>
                 <label>Theater Name: <input type="text" name="locationName" /></label>
@@ -34,7 +34,6 @@
                     <span th:text="${company.name}" />
                 </li>
             </ul>
-
 
             <h4>Theater Locations</h4>
             <ul>
