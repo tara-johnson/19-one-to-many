@@ -24,13 +24,22 @@ public class MovieCompanyController {
     @PostMapping
     public String createMovieCompany(@RequestParam String name) {
         MovieCompany company = movieCompanyRepository.save(new MovieCompany(name));
+        System.out.println(name);
         return "redirect:/";
     }
 
     @PostMapping("add-location")
     public String addTheaterLocation(
-    ) {
+            @RequestParam long companyid,
+            @RequestParam String locationName,
+            @RequestParam String address
+    )
+    {
+        TheaterLocation theater = theaterLocationRepository.save(new TheaterLocation(companyid, locationName, address));
         System.out.println("Succesfully hit add-location controller");
+        System.out.println(companyid);
+        System.out.println(locationName);
+        System.out.println(address);
         return "redirect:/";
     }
 }

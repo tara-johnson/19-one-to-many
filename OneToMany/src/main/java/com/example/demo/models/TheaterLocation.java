@@ -6,8 +6,9 @@ import javax.persistence.*;
 @Table(name = "theaterlocations")
 public class TheaterLocation {
     @Id
+    @GeneratedValue
+    @SequenceGenerator(name = "theater-location-generator")
     public Long id;
-    @Column(name = "moviecompanyid")
     public Long movieCompanyId;
     public String name;
     public String location;

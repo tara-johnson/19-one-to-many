@@ -11,6 +11,10 @@ public class MovieCompany {
     public Long id;
     public String name;
 
+    @ManyToOne
+    @JoinColumn(name = "movieCompanyId")
+    public TheaterLocation theaterLocation;
+
     // required default constructor
     public MovieCompany() {}
 
